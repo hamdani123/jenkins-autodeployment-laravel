@@ -45,3 +45,13 @@ After successfully installation check jenkins is running
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/5.png?raw=true)
 
 Also copy the highlighted text password above image and store for future use
+
+Now check your jenkins@jenkins server host
+
+``hostname -I``
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/6.png?raw=true)
+
+Jenkins run on ``8080`` port
+
+Now go to your browser and visit ``http://192.168.0.108:8080`` 
