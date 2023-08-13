@@ -74,7 +74,7 @@ Now input the previously saved password or ``cat /var/lib/jenkins/secrets/initia
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/10.png?raw=true)
 
-<strong>Now input your information for creating admin user</strong>
+<strong>Now input your information for creating admin user and click "Save and Continue"</strong>
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/12.png?raw=true)
 
