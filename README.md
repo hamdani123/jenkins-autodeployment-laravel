@@ -46,12 +46,30 @@ After successfully installation check jenkins is running
 
 Also copy the highlighted text password above image and store for future use
 
+#### Step-2 Configure Jenkins Application
+
 Now check your jenkins@jenkins server host
 
 ``hostname -I``
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/6.png?raw=true)
 
-Jenkins run on ``8080`` port
+Now go to your browser and visit ``http://192.168.0.109:8080``
 
-Now go to your browser and visit ``http://192.168.0.108:8080`` 
+Jenkins runs on ``8080`` port
+
+Now input the previously saved password or ``cat /var/lib/jenkins/secrets/initialAdminPassword``
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/8.png?raw=true)
+
+Now click on "Continue"
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/7.png?raw=true)
+
+Now click "Install suggested plugins".
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/9.png?raw=true)
+
+Now installing jenkins plugins. It will take some times. So wait for completing it.
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/10.png?raw=true)
