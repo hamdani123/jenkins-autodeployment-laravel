@@ -175,7 +175,11 @@ pipeline {
 }
 ````
 
-#### Step-6 Install docker into app server
+#### Step-6 Install docker into app server and open relevant port
+
+``sudo ufw allow 80``
+``sudo ufw allow 443``
+``sudo ufw status``
 
 Follow the instruction form the link: https://docs.docker.com/desktop/install/ubuntu/
 OR
@@ -207,6 +211,8 @@ First time, it has taken 12.55min for fresh installation.
 
 Note: For .env variables you can manage different directory on jenkins server. Personally I am working on a application which can manage env variable.
 Hopefully, I will release it soon.
+
+Now check your application on browser ``http://<app-server-ip-or-domain>``
 
 
 
