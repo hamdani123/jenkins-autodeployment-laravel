@@ -62,14 +62,14 @@ Now input the previously saved password or ``cat /var/lib/jenkins/secrets/initia
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/8.png?raw=true)
 
-Now click on "Continue"
+<strong>Now click on "Continue"</strong>
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/7.png?raw=true)
 
-Now click "Install suggested plugins".
+<strong>Now click "Install suggested plugins".</strong>
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/9.png?raw=true)
 
-Now installing jenkins plugins. It will take some times. So wait for completing it.
+<strong>Now installing jenkins plugins. It will take some times. So wait for completing it.</strong>
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/10.png?raw=true)
