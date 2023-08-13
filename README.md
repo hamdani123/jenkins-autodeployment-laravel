@@ -78,4 +78,10 @@ Now input the previously saved password or ``cat /var/lib/jenkins/secrets/initia
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/12.png?raw=true)
 
+<strong>Now input your jenkins URL and click "Save and Finish"</strong>
 
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/13.png?raw=true)
+
+<strong>Jenkins is ready. Now click "Start using jenkins"</strong>
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/14.png?raw=true)
