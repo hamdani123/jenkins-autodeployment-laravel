@@ -3,7 +3,7 @@
 For example we have two server (ubuntu) one is for jenkins and another is for
 laravel application server.
 1. jenkins@jenkins (For jenkins)
-2. app@app (For laravel)
+2. app@app (For dockerized laravel app)
 
 ![Servers](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/servers.png?raw=true)
 
@@ -85,3 +85,69 @@ Now input the previously saved password or ``cat /var/lib/jenkins/secrets/initia
 <strong>Jenkins is ready. Now click "Start using jenkins"</strong>
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/14.png?raw=true)
+
+Now jenkins is ready for deploying to remote server.
+
+#### Step-3 Make secure remote connection between jenkins server and app server
+
+We need to do this step because, we need to run command remotely from jenkins server.
+
+Now go to jenkins server ssh terminal and type ``ssh-keygen`` hit enter.
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/15.png?raw=true)
+
+Now type ``ssh-copy-id <user>@<ip-address>``
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/16.png?raw=true)
+
+Here above, app@192.168.0.110 is user and ip
+
+Now check by running command from jenkins server to app server
+
+``ssh app@192.168.0.110 whoami``
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/17.png?raw=true)
+
+Now, Its working perfectly.
+
+#### Step-4 Create jenkins job and pipeline for preparing deployment process
+
+Now go to "New item" on jenkins panel.
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/18.png?raw=true)
+
+Now input item name and select pipeline also click "Ok".
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/19.png?raw=true)
+
+After clicking "Ok", you will get new page then select "Poll SCM" under "Build Triggers"
+then scroll down, select "Pipeline script from GCM", "Git" and provide git information under "Pipeline" section.
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/20.png?raw=true)
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/21.png?raw=true)
+
+Follow above procedure. Click "Save".
+
+<b>Note: If you use github or other git provider you can install plugin accordingly. Here, I am using own git server(gitea). I have installed plugins accordingly.</b>
+
+Now jenkins part is done.
+
+#### Step-5 Need to create a "Jenkinsfile" into project root.
+
+Like below
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/22.png?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
+
