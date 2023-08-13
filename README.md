@@ -139,6 +139,75 @@ Like below
 
 ![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/22.png?raw=true)
 
+<b>Jenkinsfile file should be like below</b>
+
+````
+pipeline {
+  agent any
+  environment {
+    staging_server="192.168.0.110" // app server ip
+    remote_dir="/home/app/rolebase" // app server project directory
+    remote_user="app" // app server user
+  }
+  stages {
+    stage('Deploy') {
+      steps {
+        sh 'scp -r ${WORKSPACE}/* ${remote_user}@${staging_server}:${remote_dir}'
+        sh 'scp -r ${WORKSPACE}/.env.example ${remote_user}@${staging_server}:${remote_dir}'
+        sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && cp .env.example .env"'
+        sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose up --build -d"'
+        sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app composer install"'
+      }
+    }
+
+    stage('Migration') {
+      steps {
+        sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app php artisan migrate"'
+      }
+    }
+    
+     stage('Seed') {
+      steps {
+        sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app php artisan db:seed"'
+      }
+    }
+  }
+}
+````
+
+#### Step-6 Install docker into app server
+
+Follow the instruction form the link: https://docs.docker.com/desktop/install/ubuntu/
+OR
+1. sudo apt install apt-transport-https ca-certificates curl software-properties-common
+2. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+3. sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+4. apt-cache policy docker-ce
+5. sudo systemctl status docker
+
+<b> Note: Also, add app server user to docker group</b>
+
+#### Step-7 Build jenkins job
+
+Click "Build Now" into job details.
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/23.png?raw=true)
+
+Click the highlighted icon
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/24.png?raw=true)
+
+<b>Finally, Deployment successful</b>
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/25.png?raw=true)
+
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/26.png?raw=true)
+
+First time, it has taken 12.55min for fresh installation.
+
+Note: For .env variables you can manage different directory on jenkins server. Personally I am working on a application which can manage env variable.
+Hopefully, I will release it soon.
+
 
 
 
