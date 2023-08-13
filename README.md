@@ -214,6 +214,11 @@ Hopefully, I will release it soon.
 
 Now check your application on browser ``http://<app-server-ip-or-domain>``
 
+![alt text](https://github.com/imrancse94/jenkins-autodeployment-laravel/blob/main/27.png?raw=true)
+
+### My application is running 
+
+### !! Thank you !!
 
 
 
