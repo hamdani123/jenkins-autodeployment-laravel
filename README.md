@@ -183,11 +183,11 @@ pipeline {
 
 Follow the instruction form the link: https://docs.docker.com/desktop/install/ubuntu/
 OR
-1. sudo apt install apt-transport-https ca-certificates curl software-properties-common
-2. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-3. sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-4. apt-cache policy docker-ce
-5. sudo systemctl status docker
+1. ````sudo apt install apt-transport-https ca-certificates curl software-properties-common````
+2. ````curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -````
+3. ````sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"````
+4. ````apt-cache policy docker-ce````
+5. ````sudo systemctl status docker````
 
 <b> Note: Also, add app server user to docker group</b>
 
