@@ -182,7 +182,9 @@ pipeline {
 ``sudo ufw status``
 
 Follow the instruction form the link: https://docs.docker.com/desktop/install/ubuntu/
-OR
+
+<br><center>OR</center></br>
+
 1. ````sudo apt install apt-transport-https ca-certificates curl software-properties-common````
 2. ````curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -````
 3. ````sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"````
