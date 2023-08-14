@@ -182,7 +182,6 @@ pipeline {
 ``sudo ufw status``
 
 Follow the instruction form the link: https://docs.docker.com/desktop/install/ubuntu/
-
 <br><center>OR</center></br>
 
 1. ````sudo apt install apt-transport-https ca-certificates curl software-properties-common````
