@@ -177,8 +177,8 @@ pipeline {
 
 #### Step-6 Install docker into app server and open relevant port
 
-``sudo ufw allow 80``
-``sudo ufw allow 443``
+``sudo ufw allow 80``</br>
+``sudo ufw allow 443``</br>
 ``sudo ufw status``
 
 Follow the instruction form the link: https://docs.docker.com/desktop/install/ubuntu/
