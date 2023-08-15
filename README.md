@@ -174,12 +174,6 @@ pipeline {
         sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app php artisan migrate"'
       }
     }
-
-    /* stage('Seed') {
-      steps {
-        sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app php artisan db:seed"'
-      }
-    } */
   }
 }
 
