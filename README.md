@@ -145,8 +145,8 @@ Like below
 pipeline {
   agent any
   environment {
-    staging_server="192.168.0.110" // app server ip
-    remote_dir="/home/app/rolebase" // app server project directory
+    staging_server="192.168.0.110" // app server ip 
+    remote_dir="/home/app/rolebase" // app server directory
     remote_user="app" // app server user
   }
   stages {
@@ -174,13 +174,15 @@ pipeline {
         sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app php artisan migrate"'
       }
     }
-     stage('Seed') {
+
+    /* stage('Seed') {
       steps {
         sh 'ssh ${remote_user}@${staging_server} "cd ${remote_dir} && docker compose run --rm app php artisan db:seed"'
       }
-    }
+    } */
   }
 }
+
 ````
 
 #### Step-6 Install docker into app server and open relevant port
